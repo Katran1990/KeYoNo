@@ -6,7 +6,7 @@ public interface NoteDao {
 
     void create(Note entity);
     Note read(Long id);
-    Note update(Long id);
-    void delete(Long id);
+    Note update(Note entity);
+    void delete(Note entity);
 
 }

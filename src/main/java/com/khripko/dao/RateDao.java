@@ -6,7 +6,7 @@ public interface RateDao {
 
     void create(Rate entity);
     Rate read(Long id);
-    Rate update(Long id);
-    void delete(Long id);
+    Rate update(Rate entity);
+    void delete(Rate entity);
 
 }

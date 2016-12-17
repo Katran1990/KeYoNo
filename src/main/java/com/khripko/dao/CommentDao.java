@@ -6,7 +6,7 @@ public interface CommentDao {
 
     void create(Comment entity);
     Comment read(Long id);
-    Comment update(Long id);
-    void delete(Long id);
+    Comment update(Comment entity);
+    void delete(Comment entity);
 
 }

@@ -6,7 +6,7 @@ public interface AttachmentDao {
 
     void create(Attachment entity);
     Attachment read(Long id);
-    Attachment update(Long id);
-    void delete(Long id);
+    Attachment update(Attachment entity);
+    void delete(Attachment entity);
 
 }

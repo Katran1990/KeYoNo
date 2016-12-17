@@ -6,7 +6,7 @@ public interface TagDao {
 
     void create(Tag entity);
     Tag read(Long id);
-    Tag update(Long id);
-    void delete(Long id);
+    Tag update(Tag entity);
+    void delete(Tag entity);
 
 }
