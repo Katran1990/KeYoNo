@@ -4,9 +4,5 @@ import com.khripko.model.UserDetails;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class UserDetailsDaoImpl extends AbstractDao<UserDetails> {
-
-    public UserDetailsDaoImpl(Class<UserDetails> userDetailsClass) {
-        super(userDetailsClass);
-    }
+public class UserDetailsDaoImpl extends GenericDaoImpl<UserDetails, Long> implements UserDetailsDao {
 }
