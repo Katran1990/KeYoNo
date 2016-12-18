@@ -29,10 +29,10 @@ http://www.springframework.org/schema/context http://www.springframework.org/con
         <property name="dataSource" ref="dataSource"/>
         <property name="hibernateProperties">
             <props>
-                <prop key="${hibernate.dialect}"/>
-                <prop key="${hibernate.ddl_auto}"/>
-                <prop key="${hibernate.show_sql}"/>
-                <prop key="${hibernate.format_sql}"/>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.hbm2ddl.auto">${hibernate.ddl_auto}</prop>
+                <prop key="show_sql">${hibernate.show_sql}</prop>
+                <prop key="format_sql">${hibernate.format_sql}</prop>
             </props>
         </property>
     </bean>
