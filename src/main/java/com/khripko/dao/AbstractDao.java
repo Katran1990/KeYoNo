@@ -18,23 +18,23 @@ public abstract class AbstractDao<T> {
         this.tClass = tClass;
     }
 
-    void create(T entity){
+    public void create(T entity){
         sessionFactory.getCurrentSession().persist(entity);
     }
 
-    T read(Long id){
+    public T read(Long id){
         return sessionFactory.getCurrentSession().get(tClass, id);
     }
 
-    List<T> readAll(){
+    public List<T> readAll(){
         return (List<T>)sessionFactory.getCurrentSession().createQuery("from "+ tClass).list();
     }
 
-    T update(T entity){
+    public T update(T entity){
         return (T) sessionFactory.getCurrentSession().merge(entity);
     }
 
-    void delete(T entity){
+    public void delete(T entity){
         sessionFactory.getCurrentSession().delete(entity);
     }
 
