@@ -64,11 +64,10 @@
             <artifactId>thymeleaf-spring4</artifactId>
             <version>${thymeleaf.spring}</version>
         </dependency>
-
     </dependencies>
 
-
     <build>
+        <finalName>${war.name}</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
