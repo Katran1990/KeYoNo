@@ -63,7 +63,6 @@
                     <artifactId>maven-war-plugin</artifactId>
                     <version>${maven.war.plugin}</version>
                     <configuration>
-                        <warName>${war.name}</warName>
                         <outputDirectory>${deployment.dir}</outputDirectory>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
@@ -71,5 +70,4 @@
             </plugins>
         </pluginManagement>
     </build>
-
 </project>
