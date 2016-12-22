@@ -19,6 +19,8 @@
         <hibernate.core>5.2.5.Final</hibernate.core>
         <mysql.connector>6.0.5</mysql.connector>
         <commons.dbcp>1.4</commons.dbcp>
+        <thymeleaf>3.0.2.RELEASE</thymeleaf>
+        <thymeleaf.spring>3.0.2.RELEASE</thymeleaf.spring>
     </properties>
 
     <dependencies>
@@ -52,6 +54,17 @@
             <artifactId>spring-orm</artifactId>
             <version>${spring.orm}</version>
         </dependency>
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf</artifactId>
+            <version>${thymeleaf}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf-spring4</artifactId>
+            <version>${thymeleaf.spring}</version>
+        </dependency>
+
     </dependencies>
 
 

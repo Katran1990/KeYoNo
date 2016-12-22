@@ -12,8 +12,22 @@ http://www.springframework.org/schema/context http://www.springframework.org/con
 
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
+        <property name="templateEngine" ref="templateEngine" />
+    </bean>
+    <bean id="templateResolver"
+          class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
         <property name="prefix" value="/WEB-INF/views/templates/" />
         <property name="suffix" value=".html" />
+        <property name="templateMode" value="HTML" />
+        <property name="cacheable" value="false" />
+    </bean>
+    <bean id="templateEngine"
+          class="org.thymeleaf.spring4.SpringTemplateEngine">
+        <property name="templateResolver" ref="templateResolver" />                                 -->
+        <property name="enableSpringELCompiler" value="false" />
+    </bean>
+    <bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
+        <property name="templateEngine" ref="templateEngine" />
     </bean>
 </beans>
