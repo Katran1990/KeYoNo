@@ -71,6 +71,7 @@
                 <tr th:each="user : ${userDetailsList}">
                     <td th:text="${user.getCreationDate()}"></td>
                     <td th:text="${user.getLogin()}"></td>
+                    <td th:text="${user.getNotes().size()}"></td>
                     <td th:text="${user.isActive()}"></td>
                     <td></td>
                     <td></td>
@@ -78,6 +79,7 @@
                 <tr>
                     <td>25/06/2013</td>
                     <td>SomeNewLogin</td>
+                    <td></td>
                     <td>Inactive</td>
                     <td></td>
                     <td></td>

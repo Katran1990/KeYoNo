@@ -1,5 +1,8 @@
 package com.khripko.model;
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -18,6 +21,7 @@ public class Note {
     @Column(name = "CREATION_DATE")
     private Date creationDate;
     @ManyToOne
+    @NotFound(action = NotFoundAction.IGNORE)
     private UserDetails user;
 
     public long getId() {

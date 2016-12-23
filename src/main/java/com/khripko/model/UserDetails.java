@@ -1,7 +1,9 @@
 package com.khripko.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "USER")
@@ -28,6 +30,9 @@ public class UserDetails {
     private String password;
     @Column(name = "ACTIVE")
     private boolean isActive;
+    @OneToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(name = "USER_NOTE", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "NOTE_ID"))
+    private List<Note> notes = new ArrayList<>();
 
 
     public long getId() {
@@ -108,5 +113,13 @@ public class UserDetails {
 
     public void setActive(boolean active) {
         isActive = active;
+    }
+
+    public List<Note> getNotes() {
+        return notes;
+    }
+
+    public void setNotes(List<Note> notes) {
+        this.notes = notes;
     }
 }
