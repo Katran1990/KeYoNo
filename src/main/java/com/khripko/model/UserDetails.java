@@ -30,7 +30,7 @@ public class UserDetails {
     private String password;
     @Column(name = "ACTIVE")
     private boolean isActive;
-    @OneToMany(cascade = CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     @JoinTable(name = "USER_NOTE", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "NOTE_ID"))
     private List<Note> notes = new ArrayList<>();
 

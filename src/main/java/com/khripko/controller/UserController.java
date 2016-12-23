@@ -26,15 +26,18 @@ public class UserController {
         user.setSex("male");
         user.setEmail("some@email.com");
         user.setBirthDate(new Date());
+        user.setCreationDate(new Date());
         user.setPassword("somePassword");
         user.setActive(true);
 
         Note note1 = new Note();
+        note1.setUser(user);
         note1.setCreationDate(new Date());
         note1.setTitle("SomeTitle1");
         note1.setText("SomeText1");
 
         Note note2 = new Note();
+        note2.setUser(user);
         note2.setCreationDate(new Date());
         note2.setTitle("SomeTitle2");
         note2.setText("SomeText2");

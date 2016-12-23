@@ -39,7 +39,7 @@ public abstract class GenericDaoImpl<E, K extends Serializable> implements Gener
     }
 
     public List<E> readAll() {
-        return (List<E>) currentSession().createQuery("from "+type).list();
+        return (List<E>) currentSession().createQuery("from "+type.getSimpleName()).list();
     }
 
     public E update(E entity) {
