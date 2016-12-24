@@ -4,6 +4,7 @@ import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -11,7 +12,7 @@ import java.util.Date;
 public class Note {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "TITLE")
     private String title;
@@ -19,7 +20,7 @@ public class Note {
     @Column(name = "TEXT")
     private String text;
     @Column(name = "CREATION_DATE")
-    private Date creationDate;
+    private LocalDate creationDate;
     @ManyToOne
     @NotFound(action = NotFoundAction.IGNORE)
     private UserDetails user;
@@ -48,11 +49,11 @@ public class Note {
         this.text = text;
     }
 
-    public Date getCreationDate() {
+    public LocalDate getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
     }
 

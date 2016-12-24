@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Rate {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
     private UserDetails user;

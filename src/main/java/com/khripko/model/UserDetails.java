@@ -1,8 +1,8 @@
 package com.khripko.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -10,7 +10,7 @@ import java.util.List;
 public class UserDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "LOGIN", unique = true)
     private String login;
@@ -23,9 +23,9 @@ public class UserDetails {
     @Column(name = "EMAIL", unique = true)
     private String email;
     @Column(name = "BIRTH_DATE")
-    private Date birthDate;
+    private LocalDate birthDate;
     @Column(name = "CREATION_DATE")
-    private Date creationDate;
+    private LocalDate creationDate;
     @Column(name = "PASSWORD")
     private String password;
     @Column(name = "ACTIVE")
@@ -83,19 +83,19 @@ public class UserDetails {
         this.email = email;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
-    public Date getCreationDate() {
+    public LocalDate getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
     }
 
