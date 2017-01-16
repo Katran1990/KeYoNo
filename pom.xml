@@ -20,6 +20,7 @@
         <spring.orm>4.3.4.RELEASE</spring.orm>
         <junit>4.12</junit>
         <hibernate.core>5.2.5.Final</hibernate.core>
+        <hibernate.validator>5.3.4.Final</hibernate.validator>
         <mysql.connector>6.0.5</mysql.connector>
         <commons.dbcp>1.4</commons.dbcp>
         <thymeleaf>3.0.2.RELEASE</thymeleaf>
@@ -72,6 +73,11 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>${log4j}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate.validator}</version>
         </dependency>
     </dependencies>
 

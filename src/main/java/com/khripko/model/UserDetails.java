@@ -1,6 +1,7 @@
 package com.khripko.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,7 @@ public class UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "LOGIN", unique = true)
+    @Pattern(regexp = "/^[a-zA-Z](.[a-zA-Z0-9_-]*)$/", message = "Only letters (a-z), numbers (0-9), dashes (-) and periods (.) are allowed")
     private String login;
     @Column(name = "FIRST_NAME")
     private String firstName;
@@ -21,6 +23,7 @@ public class UserDetails {
     @Column(name = "SEX")
     private String sex;
     @Column(name = "EMAIL", unique = true)
+    @Pattern(regexp = "/@/", message = "Email address must contain '@'")
     private String email;
     @Column(name = "BIRTH_DATE")
     private LocalDate birthDate;
