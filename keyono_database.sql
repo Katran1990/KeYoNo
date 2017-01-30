@@ -78,3 +78,78 @@ CREATE TABLE USER_NOTE
 );
 CREATE INDEX FK9ougl0hr1i3o948oi0ggdnlta ON USER_NOTE (USER_ID);
 CREATE UNIQUE INDEX UK_fycbh4mnq1fq336305ehguog6 ON USER_NOTE (NOTE_ID);
+
+#Users
+INSERT INTO keyono.USER (BIRTH_DATE, CREATION_DATE, EMAIL, FIRST_NAME, ACTIVE, LAST_NAME, LOGIN, PASSWORD, SEX) VALUES ('1991-08-11', '2017-01-22', 'some1@email.com', 'firstName1', true, 'lastName1', 'Login1', 'Password1', 'male');
+INSERT INTO keyono.USER (BIRTH_DATE, CREATION_DATE, EMAIL, FIRST_NAME, ACTIVE, LAST_NAME, LOGIN, PASSWORD, SEX) VALUES ('1990-12-12', '2017-11-11', 'some2@email.com', 'firstName2', true, 'lastName2', 'Login2', 'Password2', 'male');
+INSERT INTO keyono.USER (BIRTH_DATE, CREATION_DATE, EMAIL, FIRST_NAME, ACTIVE, LAST_NAME, LOGIN, PASSWORD, SEX) VALUES ('1995-10-10', '2017-10-10', 'some3@email.com', 'firstName3', true, 'lastName3', 'Login3', 'Password3', 'female');
+INSERT INTO keyono.USER (BIRTH_DATE, CREATION_DATE, EMAIL, FIRST_NAME, ACTIVE, LAST_NAME, LOGIN, PASSWORD, SEX) VALUES ('1994-09-09', '2017-09-09', 'some4@email.com', 'firstName4', true, 'lastName4', 'Login4', 'Password4', 'male');
+INSERT INTO keyono.USER (BIRTH_DATE, CREATION_DATE, EMAIL, FIRST_NAME, ACTIVE, LAST_NAME, LOGIN, PASSWORD, SEX) VALUES ('1989-08-08', '2017-08-08', 'some5@email.com', 'firstName5', true, 'lastName5', 'Login5', 'Password5', 'female');
+INSERT INTO keyono.USER (BIRTH_DATE, CREATION_DATE, EMAIL, FIRST_NAME, ACTIVE, LAST_NAME, LOGIN, PASSWORD, SEX) VALUES ('1988-07-07', '2017-07-07', 'some6@email.com', 'firstName6', true, 'lastName6', 'Login6', 'Password6', 'male');
+INSERT INTO keyono.USER (BIRTH_DATE, CREATION_DATE, EMAIL, FIRST_NAME, ACTIVE, LAST_NAME, LOGIN, PASSWORD, SEX) VALUES ('1983-06-06', '2017-06-06', 'some7@email.com', 'firstName7', true, 'lastName7', 'Login7', 'Password7', 'female');
+INSERT INTO keyono.USER (BIRTH_DATE, CREATION_DATE, EMAIL, FIRST_NAME, ACTIVE, LAST_NAME, LOGIN, PASSWORD, SEX) VALUES ('1987-05-05', '2017-05-05', 'some8@email.com', 'firstName8', true, 'lastName8', 'Login8', 'Password8', 'male');
+INSERT INTO keyono.USER (BIRTH_DATE, CREATION_DATE, EMAIL, FIRST_NAME, ACTIVE, LAST_NAME, LOGIN, PASSWORD, SEX) VALUES ('1987-04-04', '2017-04-04', 'some9@email.com', 'firstName9', false, 'lastName9', 'Login9', 'Password9', 'male');
+INSERT INTO keyono.USER (BIRTH_DATE, CREATION_DATE, EMAIL, FIRST_NAME, ACTIVE, LAST_NAME, LOGIN, PASSWORD, SEX) VALUES ('1987-03-03', '2017-03-03', 'some10@email.com', 'firstName10', false, 'lastName10', 'Login10', 'Password10', 'male');
+
+#Notes
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-01-22', 'SomeText1', 'SomeTitle1', 1);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-01-22', 'SomeText2', 'SomeTitle2', 1);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-01-25', 'SomeText3', 'SomeTitle3', 2);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-01-26', 'SomeText4', 'SomeTitle4', 2);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-01-27', 'SomeText5', 'SomeTitle5', 2);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-01-27', 'SomeText6', 'SomeTitle6', 3);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-01-28', 'SomeText7', 'SomeTitle7', 4);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-02-28', 'SomeText8', 'SomeTitle8', 5);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-02-28', 'SomeText9', 'SomeTitle9', 6);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-02-28', 'SomeText10', 'SomeTitle10', 6);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-03-01', 'SomeText11', 'SomeTitle11', 7);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-03-02', 'SomeText12', 'SomeTitle12', 7);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-03-02', 'SomeText13', 'SomeTitle13', 7);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-03-02', 'SomeText14', 'SomeTitle14', 7);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-03-03', 'SomeText15', 'SomeTitle15', 7);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-03-05', 'SomeText16', 'SomeTitle16', 7);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-03-06', 'SomeText17', 'SomeTitle17', 7);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-03-06', 'SomeText18', 'SomeTitle18', 8);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-03-06', 'SomeText19', 'SomeTitle19', 8);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-03-06', 'SomeText20', 'SomeTitle20', 6);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-03-06', 'SomeText21', 'SomeTitle21', 3);
+INSERT INTO keyono.NOTE (CREATION_DATE, TEXT, TITLE, user_id) VALUES ('2017-03-07', 'SomeText22', 'SomeTitle22', 1);
+
+#User&Note
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (1, 1);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (1, 2);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (1, 22);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (2, 3);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (2, 4);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (2, 5);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (3, 6);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (3, 21);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (4, 7);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (5, 8);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (6, 9);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (6, 10);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (6, 20);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (7, 11);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (7, 12);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (7, 13);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (7, 14);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (7, 15);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (7, 16);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (7, 17);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (8, 18);
+INSERT INTO keyono.USER_NOTE (USER_ID, NOTE_ID) VALUES (8, 19);
+
+#Comment
+INSERT INTO keyono.COMMENT (CREATION_DATE, TEXT, note_id, user_id) VALUES ('2017-02-11 00:00:00', 'SomeComment1', 1, 5);
+INSERT INTO keyono.COMMENT (CREATION_DATE, TEXT, note_id, user_id) VALUES ('2017-02-15 00:00:00', 'SomeComment1', 1, 4);
+INSERT INTO keyono.COMMENT (CREATION_DATE, TEXT, note_id, user_id) VALUES ('2017-02-12 00:00:00', 'SomeComment1', 1, 1);
+INSERT INTO keyono.COMMENT (CREATION_DATE, TEXT, note_id, user_id) VALUES ('2017-02-16 00:00:00', 'SomeComment1', 2, 4);
+INSERT INTO keyono.COMMENT (CREATION_DATE, TEXT, note_id, user_id) VALUES ('2017-02-16 00:00:00', 'SomeComment1', 3, 6);
+INSERT INTO keyono.COMMENT (CREATION_DATE, TEXT, note_id, user_id) VALUES ('2017-02-16 00:00:00', 'SomeComment1', 3, 3);
+INSERT INTO keyono.COMMENT (CREATION_DATE, TEXT, note_id, user_id) VALUES ('2017-02-07 00:00:00', 'SomeComment1', 4, 3);
+INSERT INTO keyono.COMMENT (CREATION_DATE, TEXT, note_id, user_id) VALUES ('2017-02-16 00:00:00', 'SomeComment1', 5, 7);
+INSERT INTO keyono.COMMENT (CREATION_DATE, TEXT, note_id, user_id) VALUES ('2017-02-26 00:00:00', 'SomeComment1', 6, 2);
+INSERT INTO keyono.COMMENT (CREATION_DATE, TEXT, note_id, user_id) VALUES ('2017-02-26 00:00:00', 'SomeComment1', 7, 1);
+INSERT INTO keyono.COMMENT (CREATION_DATE, TEXT, note_id, user_id) VALUES ('2017-02-27 00:00:00', 'SomeComment1', 7, 8);
+INSERT INTO keyono.COMMENT (CREATION_DATE, TEXT, note_id, user_id) VALUES ('2017-02-28 00:00:00', 'SomeComment1', 7, 2);
+INSERT INTO keyono.COMMENT (CREATION_DATE, TEXT, note_id, user_id) VALUES ('2017-03-01 00:00:00', 'SomeComment1', 1, 7);
