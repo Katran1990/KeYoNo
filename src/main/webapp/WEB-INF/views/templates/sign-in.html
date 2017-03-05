@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Keyono</title>
+    <link th:href="@{/resources/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+<div class="container" id="container-top">
+    <nav class="navbar navbar-inverse" id="navbar-top-exp">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" id="keyono-brand">KeYoNo</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Notes</a></li>
+                    <li><a href="#">Users</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li class="active"><a href="/keyono/login">Log in</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container" id="container-middle">
+    <form class="form-horizontal" role="form" id="login-form">
+        <h2 id="form-header">Sign up for KeYoNo</h2>
+        <div class="form-group">
+            <label for="email" class="col-sm-5 control-label">Login:</label>
+            <div class="col-sm-4">
+                <input type="email" id="email" placeholder="Login" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-5 control-label">Password:</label>
+            <div class="col-sm-4">
+                <input type="password" id="password" placeholder="Password" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-3 col-sm-offset-5">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-3 col-sm-offset-5">
+                <a href="/keyono/registration">Create new account</a>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="container" id="container-bottom">
+    <nav class="navbar navbar-inverse" id="navbar-bottom-exp">
+        <div class="container-fluid" id="footer-content">
+            <p class="pull-left small" id="footer-text">KeYoNo - Keep Your Note</p>
+            <p class="pull-right small" id="footer-text">Created by Boris Khripko, 2017</p>
+        </div>
+    </nav>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script th:src="@{/resources/js/bootstrap.min.js}"></script>
+</body>
+
+</html>
