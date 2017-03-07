@@ -21,14 +21,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#" id="keyono-brand">KeYoNo</a>
+                <a class="navbar-brand" th:href="@{/welcome}" id="keyono-brand">KeYoNo</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Notes</a></li>
-                    <li><a href="#">Users</a></li>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="/keyono/login" >Log in</a></li>
+                    <li><a th:href="@{/welcome}">About</a></li>
+                    <li><a th:href="@{/login}" >Log in</a></li>
                 </ul>
             </div>
         </div>
@@ -111,14 +109,6 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script th:src="@{/resources/js/bootstrap.min.js}"></script>
-<script th:inline="javascript">
-    /*<![CDATA[*/
-    function redirectToLogin() {
-        var url = "/keyono/login";
-        window.location.replace(url);
-    }
-    /*]]>*/
-</script>
 </body>
 
 </html>

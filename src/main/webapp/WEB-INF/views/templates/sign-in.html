@@ -20,14 +20,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#" id="keyono-brand">KeYoNo</a>
+                <a class="navbar-brand" th:href="@{/welcome}" id="keyono-brand">KeYoNo</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Notes</a></li>
-                    <li><a href="#">Users</a></li>
-                    <li><a href="#">Profile</a></li>
-                    <li class="active"><a href="/keyono/login">Log in</a></li>
+                    <li><a th:href="@{/welcome}">About</a></li>
+                    <li class="active"><a th:href="@{/login}">Log in</a></li>
                 </ul>
             </div>
         </div>
@@ -55,7 +53,7 @@
         </div>
         <div class="form-group">
             <div class="col-sm-3 col-sm-offset-5">
-                <a href="/keyono/registration">Create new account</a>
+                <a th:href="@{/registration}">Create new account</a>
             </div>
         </div>
     </form>

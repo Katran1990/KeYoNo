@@ -16,6 +16,10 @@ public class WelcomeController {
     @Autowired
     UserDetailsService userDetailsService;
 
+    @GetMapping("/welcome")
+    public String getWelcomePage(){
+        return "welcome_page";
+    }
 
     @GetMapping("/login")
     public String getSigninPage(){

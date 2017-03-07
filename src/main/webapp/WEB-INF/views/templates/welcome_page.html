@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Keyono</title>
+    <link th:href="@{/resources/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/style.css}" rel="stylesheet">
+    <link th:href="@{/resources/css/carousel.css}" rel="stylesheet">
+</head>
+
+<body>
+<div class="container" id="container-top">
+    <nav class="navbar navbar-inverse" id="navbar-top-exp">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" th:href="@{/welcome}" id="keyono-brand">KeYoNo</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a th:href="@{/welcome}">About</a></li>
+                    <li><a th:href="@{/login}">Log in</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container" id="container-middle">
+    <div id="myCarousel" class="carousel slide" data-interval="5000">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img th:src="@{/resources/media/coffee_note.jpeg}" class="img-responsive">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Try to keep your notes with KeYoNo</h1>
+                        <p></p>
+                        <p><a class="btn btn-primary black-background" th:href="@{/login}">Try the app</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img th:src="@{/resources/media/think_to_net.jpeg}" class="img-responsive">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Publish your ideas to our app</h1>
+                        <p>You can create, modify and look all your notes in our app</p>
+                        <p><a class="btn btn-primary black-background" th:href="@{/login}">Try the app</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img th:src="@{/resources/media/think.jpeg}">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Follow the comments and rates of your ideas</h1>
+                        <p>You can follow the opinions of other people who evaluate and comment your note.</p>
+                        <p><a class="btn btn-primary black-background" th:href="@{/login}">Try the app</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </div>
+</div>
+<div class="container" id="container-bottom">
+    <nav class="navbar navbar-inverse" id="navbar-bottom-exp">
+        <div class="container-fluid" id="footer-content">
+            <p class="pull-left small" id="footer-text">KeYoNo - Keep Your Note</p>
+            <p class="pull-right small" id="footer-text">Created by Boris Khripko, 2017</p>
+        </div>
+    </nav>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script th:src="@{/resources/js/bootstrap.min.js}"></script>
+</body>
+
+</html>
