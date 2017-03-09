@@ -35,6 +35,18 @@ public class UserDetails {
     @JoinTable(name = "USER_NOTE", joinColumns = @JoinColumn(name = "USER_ID"), inverseJoinColumns = @JoinColumn(name = "NOTE_ID"))
     private List<Note> notes = new ArrayList<>();
 
+    public UserDetails() {
+    }
+
+    public UserDetails(String login, String firstName, String lastName, String sex, String email, LocalDate birthDate, String password) {
+        this.login = login;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.sex = sex;
+        this.email = email;
+        this.birthDate = birthDate;
+        this.password = password;
+    }
 
     public long getId() {
         return id;
