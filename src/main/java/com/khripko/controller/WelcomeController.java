@@ -31,12 +31,12 @@ public class WelcomeController {
     }
 
     @GetMapping("/registration")
-    public String getSignUpPage(){
+    public String getSignUpPage(@ModelAttribute(value = "user") UserDetails user){
         return "sign-up";
     }
 
     @PostMapping("/post-user-info")
-    public String sendUserRegistration(@ModelAttribute(value = "user") UserDetails user){
+    public String sendUserRegistration(@ModelAttribute(value = "user") UserDetails user, BindingResult result){
         user.setActive(false);
         user.setCreationDate(LocalDate.now());
         userDetailsService.create(user);
