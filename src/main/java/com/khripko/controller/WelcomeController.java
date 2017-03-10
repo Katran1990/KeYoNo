@@ -37,8 +37,9 @@ public class WelcomeController {
 
     @PostMapping("/post-user-info")
     public String sendUserRegistration(@ModelAttribute(value = "user") UserDetails user, BindingResult result){
+        user.setBirthDate(user.getBirthDate().plusDays(1));
         user.setActive(false);
-        user.setCreationDate(LocalDate.now());
+        user.setCreationDate(LocalDate.now().plusDays(1));
         userDetailsService.create(user);
         return "redirect:/welcome";
     }

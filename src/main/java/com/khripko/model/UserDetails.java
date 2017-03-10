@@ -1,5 +1,7 @@
 package com.khripko.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
@@ -23,6 +25,7 @@ public class UserDetails {
     private String sex;
     @Column(name = "EMAIL", unique = true)
     private String email;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "BIRTH_DATE")
     private LocalDate birthDate;
     @Column(name = "CREATION_DATE")
