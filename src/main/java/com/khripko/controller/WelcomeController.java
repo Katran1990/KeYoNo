@@ -4,6 +4,8 @@ import com.khripko.model.UserDetails;
 import com.khripko.service.UserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -26,7 +28,10 @@ public class WelcomeController {
     }
 
     @GetMapping("/login")
-    public String getSignInPage(){
+    public String getSignInPage(Model model){
+        if (model.asMap().size()!=0) {
+            Model newModel = (Boolean) model.asMap().get("is-correct") ? model.addAttribute("correct", true) : model.addAttribute("correct", false);
+        }
         return "sign-in";
     }
 
@@ -45,14 +50,16 @@ public class WelcomeController {
     }
 
     @PostMapping("/check-user-sign-in")
-    public String checkUserSignIn(@RequestParam("login") String login, @RequestParam("password") String password, HttpServletRequest request){
+    public String checkUserSignIn(@RequestParam("login") String login, @RequestParam("password") String password, Model model, HttpServletRequest request){
         Long userId = userDetailsService.getUserIdIfExist(login);
         if (userId==-1){
-            return "redirect:/login";
+            model.addAttribute("is-correct", false);
+            return "/login";
         }
         UserDetails user = userDetailsService.read(userId);
         if (!user.getPassword().equals(password)){
-            return "redirect:/login";
+            model.addAttribute("is-correct", false);
+            return "/login";
         }
         HttpSession session = request.getSession();
         session.setAttribute("currentUserId", user.getId());
