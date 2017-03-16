@@ -3,6 +3,7 @@ package com.khripko.controller;
 import com.khripko.model.UserDetails;
 import com.khripko.service.UserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -28,9 +29,9 @@ public class WelcomeController {
     }
 
     @GetMapping("/login")
-    public String getSignInPage(Model model){
-        if (model.asMap().size()!=0) {
-            Model newModel = (Boolean) model.asMap().get("is-correct") ? model.addAttribute("correct", true) : model.addAttribute("correct", false);
+    public String getSignInPage(HttpServletRequest request){
+        if (request.getSession().isNew() || request.getSession().getAttribute("correct")==null){
+            request.getSession().setAttribute("correct", true);
         }
         return "sign-in";
     }
@@ -50,16 +51,16 @@ public class WelcomeController {
     }
 
     @PostMapping("/check-user-sign-in")
-    public String checkUserSignIn(@RequestParam("login") String login, @RequestParam("password") String password, Model model, HttpServletRequest request){
+    public String checkUserSignIn(@RequestParam("login") String login, @RequestParam("password") String password, HttpServletRequest request){
         Long userId = userDetailsService.getUserIdIfExist(login);
         if (userId==-1){
-            model.addAttribute("is-correct", false);
-            return "/login";
+            request.getSession().setAttribute("correct", false);
+            return "redirect:/login";
         }
         UserDetails user = userDetailsService.read(userId);
         if (!user.getPassword().equals(password)){
-            model.addAttribute("is-correct", false);
-            return "/login";
+            request.getSession().setAttribute("correct", false);
+            return "redirect:/login";
         }
         HttpSession session = request.getSession();
         session.setAttribute("currentUserId", user.getId());
