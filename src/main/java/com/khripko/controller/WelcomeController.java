@@ -54,16 +54,26 @@ public class WelcomeController {
     public String checkUserSignIn(@RequestParam("login") String login, @RequestParam("password") String password, HttpServletRequest request){
         Long userId = userDetailsService.getUserIdIfExist(login);
         if (userId==-1){
-            request.getSession().setAttribute("correct", false);
+            HttpSession session = request.getSession();
+            session.setAttribute("correct", false);
+            session.setAttribute("correctLogin", true);
             return "redirect:/login";
         }
         UserDetails user = userDetailsService.read(userId);
         if (!user.getPassword().equals(password)){
-            request.getSession().setAttribute("correct", false);
+            HttpSession session = request.getSession();
+            session.setAttribute("correct", false);
+            session.setAttribute("correctPassword", true);
             return "redirect:/login";
         }
         HttpSession session = request.getSession();
         session.setAttribute("currentUserId", user.getId());
-        return "redirect:/welcome";
+        return "redirect:/notes";
+    }
+
+    @GetMapping("/log-out")
+    public String checkUserSignOut(HttpServletRequest request){
+        request.getSession().invalidate();
+        return "redirect:/login";
     }
 }
