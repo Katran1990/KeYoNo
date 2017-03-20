@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <thymeleaf th:replace="head_fragment::head"></thymeleaf>
+</head>
+
+<body>
+<div class="container" id="container-top">
+    <nav class="navbar navbar-inverse" id="navbar-top-exp">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" th:href="@{/welcome}" id="keyono-brand">KeYoNo</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">By creation date</a></li>
+                            <li><a href="#">By login</a></li>
+                            <li><a href="#">By status</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Search</a></li>
+                    <li><a th:href="@{/notes}">Notes</a></li>
+                    <li class="active"><a th:href="@{/users}">Users</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a th:href="@{/welcome}">About</a></li>
+                    <li><a th:href="@{/log-out}">Log out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container" id="container-middle">
+    <div class="panel panel-default">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Login</th>
+                <th>Creation date</th>
+                <th>Publications</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user : ${users}">
+                <th scope="row" th:text="${user.getId()}"></th>
+                <td th:text="${user.getLogin()}"></td>
+                <td th:text="${user.getCreationDate()}"></td>
+                <td th:text="${user.getNotes().size()}"></td>
+                <td th:text="${user.isActive()}"></td>
+                <td>
+                    <button class="btn btn-primary btn-sm">edit</button>
+                    <button class="btn btn-info btn-sm">delete</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="container" id="container-bottom">
+    <nav class="navbar navbar-inverse" id="navbar-bottom-exp">
+        <div class="container-fluid" id="footer-content">
+            <p class="pull-left small" id="footer-text">KeYoNo - Keep Your Note</p>
+            <p class="pull-right small" id="footer-text">Created by Boris Khripko, 2017</p>
+        </div>
+    </nav>
+</div>
+<thymeleaf th:replace="end_body_fragment::down"></thymeleaf>
+</body>
+
+</html>
