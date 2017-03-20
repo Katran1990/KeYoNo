@@ -33,7 +33,7 @@
                     <li><a href="#">Search</a></li>
                     <li class="active"><a th:href="@{/notes}">Notes</a></li>
                     <li><a th:href="@{/users}">Users</a></li>
-                    <li><a href="#">Profile</a></li>
+                    <li><a th:href="@{/profile}">Profile</a></li>
                     <li><a th:href="@{/welcome}">About</a></li>
                     <li><a th:href="@{/log-out}">Log out</a></li>
                 </ul>
@@ -46,7 +46,6 @@
         <table class="table">
             <thead>
             <tr>
-                <th>#</th>
                 <th>Title</th>
                 <th>Owner</th>
                 <th>Modification</th>
@@ -55,7 +54,6 @@
             </thead>
             <tbody>
             <tr th:each="note:${notes}">
-                <th scope="row" th:text="${note.getId()}"></th>
                 <td th:text="${note.getTitle()}"></td>
                 <td th:text="${note.getUser().getLogin()}"></td>
                 <td th:text="${note.getCreationDate()}"></td>
